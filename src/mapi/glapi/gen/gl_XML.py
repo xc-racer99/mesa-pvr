@@ -681,7 +681,7 @@ class gl_function( gl_item ):
             # Only try to set the offset when a non-alias entry-point
             # is being processed.
 
-            if name in static_data.offsets and static_data.offsets[name] <= static_data.MAX_OFFSETS:
+            if name in static_data.offsets:
                 self.offset = static_data.offsets[name]
             elif name in static_data.offsets and static_data.offsets[name] > static_data.MAX_OFFSETS:
                 self.offset = static_data.offsets[name]
