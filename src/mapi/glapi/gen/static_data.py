@@ -1454,6 +1454,22 @@ offsets = {
     "BlendBarrier": 1418,
     "PrimitiveBoundingBox": 1419,
     "MaxShaderCompilerThreadsKHR": 1420,
+    "FramebufferTextureMultiviewOVR" : 1421,
+    "CurrentPaletteMatrixOES" : 1422,
+    "LoadPaletteFromModelViewMatrixOES" : 1423,
+    "MatrixIndexPointerOES" : 1424,
+    "WeightPointerOES" : 1425,
+    "RenderbufferStorageMultisampleIMG" : 1426,
+    "FramebufferTexture2DMultisampleIMG" : 1427,
+    "TexPageCommitmentEXT" : 1428,
+    "TexturePageCommitmentEXT" : 1429,
+    "FramebufferTextureMultisampleMultiviewOVR" : 1430,
+    "ClearPixelLocalStorageuiEXT" : 1431,
+    "FramebufferPixelLocalStorageSizeEXT" : 1432,
+    "GetFramebufferPixelLocalStorageSizeEXT" : 1433,
+    "FramebufferTexture2DDownsampleIMG" : 1434,
+    "FramebufferTextureLayerDownsampleIMG" : 1435,
+    "ClipControlEXT" : 1436,
 }
 
 functions = [

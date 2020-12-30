@@ -43,6 +43,3 @@ libpvr = static_library(
   cpp_args : [cpp_vis_args],
   dependencies : [dep_libpvr],
 )
-
-dri_drivers += libpvr
-dri_link += 'pvr_dri.so'
