@@ -52,10 +52,23 @@ if with_dri_nouveau
   _dri_drivers += libnouveau_vieux
   _dri_link += 'nouveau_vieux_dri.so'
 endif
-if with_dri_pvr
+
+if (with_dri_tilcdc or with_dri_tidss or with_dri_omapdrm or with_dri_exynos)
   subdir('pvr')
   _dri_drivers += libpvr
-  _dri_link += 'pvr_dri.so'
+endif
+
+if with_dri_tilcdc
+  _dri_link += 'tilcdc_dri.so'
+endif
+if with_dri_tidss
+  _dri_link += 'tidss_dri.so'
+endif
+if with_dri_omapdrm
+  _dri_link += 'omapdrm_dri.so'
+endif
+if with_dri_exynos
+  _dri_link += 'exynos_dri.so'
 endif
 
 if _dri_drivers != []

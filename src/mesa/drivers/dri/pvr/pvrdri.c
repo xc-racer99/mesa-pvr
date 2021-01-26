@@ -997,8 +997,32 @@ static const __DRIextension *pvr_driver_extensions[] = {
     NULL
 };
 
-const __DRIextension **__driDriverGetExtensions_pvr(void);
-PUBLIC const __DRIextension **__driDriverGetExtensions_pvr(void)
+const __DRIextension **__driDriverGetExtensions_tilcdc(void);
+PUBLIC const __DRIextension **__driDriverGetExtensions_tilcdc(void)
+{
+   globalDriverAPI = &pvr_driver_api;
+
+   return pvr_driver_extensions;
+}
+
+const __DRIextension **__driDriverGetExtensions_tidss(void);
+PUBLIC const __DRIextension **__driDriverGetExtensions_tidss(void)
+{
+   globalDriverAPI = &pvr_driver_api;
+
+   return pvr_driver_extensions;
+}
+
+const __DRIextension **__driDriverGetExtensions_omapdrm(void);
+PUBLIC const __DRIextension **__driDriverGetExtensions_omapdrm(void)
+{
+   globalDriverAPI = &pvr_driver_api;
+
+   return pvr_driver_extensions;
+}
+
+const __DRIextension **__driDriverGetExtensions_exynos(void);
+PUBLIC const __DRIextension **__driDriverGetExtensions_exynos(void)
 {
    globalDriverAPI = &pvr_driver_api;
 

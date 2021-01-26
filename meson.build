@@ -160,9 +160,9 @@ if dri_drivers.contains('auto')
   if system_has_kms_drm
     # TODO: PPC, Sparc
     if ['x86', 'x86_64'].contains(host_machine.cpu_family())
-      dri_drivers = ['i915', 'i965', 'r100', 'r200', 'nouveau', 'pvr']
+      dri_drivers = ['i915', 'i965', 'r100', 'r200', 'nouveau']
     elif ['arm', 'aarch64'].contains(host_machine.cpu_family())
-      dri_drivers = ['pvr']
+      dri_drivers = ['tidss', 'tilcdc', 'omapdrm', 'exynos']
     elif ['mips', 'mips64'].contains(host_machine.cpu_family())
       dri_drivers = ['r100', 'r200', 'nouveau']
     else
@@ -184,7 +184,10 @@ with_dri_r100 = dri_drivers.contains('r100')
 with_dri_r200 = dri_drivers.contains('r200')
 with_dri_nouveau = dri_drivers.contains('nouveau')
 with_dri_swrast = dri_drivers.contains('swrast')
-with_dri_pvr = dri_drivers.contains('pvr')
+with_dri_tilcdc = dri_drivers.contains('tilcdc')
+with_dri_omapdrm = dri_drivers.contains('omapdrm')
+with_dri_exynos = dri_drivers.contains('exynos')
+with_dri_tidss = dri_drivers.contains('tidss')
 
 with_dri = dri_drivers.length() != 0
 
@@ -1386,7 +1389,6 @@ _drm_amdgpu_ver = '2.4.100'
 _drm_radeon_ver = '2.4.71'
 _drm_nouveau_ver = '2.4.102'
 _drm_intel_ver = '2.4.75'
-_drm_pvr_ver = '2.4.60'
 _drm_ver = '2.4.81'
 
 _libdrm_checks = [
@@ -1395,7 +1397,6 @@ _libdrm_checks = [
   ['radeon', (with_gallium_radeonsi or with_dri_r100 or with_dri_r200 or
               with_gallium_r300 or with_gallium_r600)],
   ['nouveau', (with_gallium_nouveau or with_dri_nouveau)],
-  ['pvr', with_dri_pvr],
 ]
 
 # VC4 only needs core libdrm support of this version, not a libdrm_vc4
